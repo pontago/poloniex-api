@@ -310,7 +310,7 @@ class PoloniexAPITrading {
             'address' => $address
         ];
 
-        if ($currency === "XMR" && !empty($paymentId)) {
+        if (($currency === "XMR" || $currency === "XEM") && !empty($paymentId)) {
             $request['paymentId'] = $paymentId;
         }
 
