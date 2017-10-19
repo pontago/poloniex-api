@@ -81,6 +81,8 @@ class Request {
         curl_setopt(self::$ch, CURLOPT_POSTFIELDS, $postData);
         curl_setopt(self::$ch, CURLOPT_HTTPHEADER, $headers);
         curl_setopt(self::$ch, CURLOPT_SSL_VERIFYPEER, false);
+        curl_setopt(self::$ch, CURLOPT_TIMEOUT, 300);
+        curl_setopt(self::$ch, CURLOPT_CONNECTTIMEOUT, 20);
 
         // run the query
         $res = curl_exec(self::$ch);
